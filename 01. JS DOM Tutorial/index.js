@@ -1,48 +1,55 @@
-const view1 = document.getElementById("view1");
-const view2 = document.querySelector("#view2");
+/** get view1 and view2 */
+const view1 = document.querySelector(".view1");
+const view2 = document.getElementById("view2");
 
+/** set display view1 to flex and view2 to none */
 view1.style.display = "flex";
 view2.style.display = "none";
 
-const views = document.getElementsByClassName("view");
-const views1 = document.querySelectorAll(".view");
+/** get views class 2 ways */
+const views = document.querySelectorAll(".view");
+const sameViews = document.getElementsByClassName("view");
 
-const divs = view1.querySelectorAll("div");
-const divs1 = view1.getElementsByTagName("div");
+/** get div elements 2 ways */
+const divs = document.querySelectorAll("div");
+const sameDivs = document.getElementsByTagName("div");
 
+/** get even divs */
 const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)");
 for (let i = 0; i < evenDivs.length; i++) {
   evenDivs[i].style.backgroundColor = "darkblue";
-  // evenDivs[i].style.width = "200px";
-  // evenDivs[i].style.height = "200px";
 }
 
+/** set navText text content and navbar content */
 const navText = document.querySelector("nav h1");
 navText.textContent = "Hello World!";
 const navbar = document.querySelector("nav");
-navbar.innerHTML = "<h1>Hello World!</h1> <p>This should align right</p>";
-navbar.style.justifyContent = "space-between";
+navbar.innerHTML = "<h1>Hello World!</h1> <p>This is on the right</p>";
+navbar.style.display = "space-between";
 
+/** output even divs */
 console.log(evenDivs);
-// outputs the parent element
+/** output parent element of first even divs */
 console.log(evenDivs[0].parentElement);
-// outputs the children of the parent element
-console.log(evenDivs[0].parentElement.children);
-console.log(evenDivs[0].parentElement.childNodes);
-console.log(evenDivs[0].parentElement.hasChildNodes());
+/** output first even div's parent's last child and last child element */
 console.log(evenDivs[0].parentElement.lastChild);
 console.log(evenDivs[0].parentElement.lastElementChild);
+/** output first even div's parent's first child and first child element */
 console.log(evenDivs[0].parentElement.firstChild);
 console.log(evenDivs[0].parentElement.firstElementChild);
+/** output first even div's parent's next sibling and next element sibling */
 console.log(evenDivs[0].parentElement.nextSibling);
 console.log(evenDivs[0].parentElement.nextElementSibling);
-console.log(evenDivs[0].parentElement.previousSibling);
-console.log(evenDivs[0].parentElement.previousElementSibling);
 
+/** output last even div previous sibling and previous element sibling */
+console.log(evenDivs[evenDivs.length - 1].previousSibling);
+console.log(evenDivs[evenDivs.length - 1].previousElementSibling);
+
+/** make view1 display to none and view2 to flex, row, wrap, margin of 10px */
 view1.style.display = "none";
 view2.style.display = "flex";
-view2.style.flexDirection = "row";
 view2.style.flexWrap = "wrap";
+view2.style.flexDirection = "row";
 view2.style.margin = "10px";
 
 while (view2.lastChild) {
